@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+    <div class="col-md-11 col-md-offset-11 col-centered">
+        <h2 class="text-primary mt-5 text-center mb-3">List page</h2>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Task Name</th>
+                    <th scope="col">Task Description</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each list}}
+                <tr>
+                    <th scope="row">{{this.list.id}}</th>
+                    <td>{{this.taskName}}</td>
+                    <td>{{this.taskDesc}}</td>
+                    <td>
+                        <a href="#">Edit</a>
+                        <a href="/task/delete/{{this._id}}"> Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+               
+            </tbody>
+        </table>
+
+        <a href="/task" type="submit" class="btn btn-primary"> Go Back</a>
+        </div>
+        
+        </div>
+</div>
+
+        <!--<table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Task Name</th>
+                    <th>Task Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each list}}
+                <tr>
+                    <td>{{this.taskName}}</td>
+                    <td>{{this.taskDesc}}</td>
+                    <td>
+                        <a href="#">Edit</a>
+                        <a href="/task/delete/{{this._id}}"> Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>-->
+  
+

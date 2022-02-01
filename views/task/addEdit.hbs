@@ -1,0 +1,24 @@
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-11 col-md-offset-7 col-centered">
+            <h2 class="text-primary mt-5 mb-4 text-center">{{viewTitle}}</h2>
+            <div class=" d-flex justify-content-center">
+                <form action="/task" autocomplete="off" method="POST">
+                <div class="form-group">
+                    <label for="taskname">Task name:</label><br>
+                    <input required type="text" class="form-control" id="taskname" name="taskname"><br>
+                
+                    <label for="taskdesc">Task description:</label><br>
+                    <input required class="form-control" type="text" id="taskdesc" name="taskdesc"><br><br>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<a href="/task/list" class="container">View all</a>
