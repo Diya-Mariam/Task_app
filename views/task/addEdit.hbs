@@ -7,12 +7,21 @@
                 <form action="/task" autocomplete="off" method="POST">
                 <div class="form-group">
                     <label for="taskname">Task name:</label><br>
-                    <input required type="text" class="form-control" id="taskname" name="taskname"><br>
+                    <div class="input-group-lg">
+                        
+                        <input required type="text" class="form-control" id="taskname" name="taskname"><br>
+                    </div>
                 
                     <label for="taskdesc">Task description:</label><br>
-                    <input required class="form-control" type="text" id="taskdesc" name="taskdesc"><br><br>
+                    <div class="input-group-lg">
+         <!--                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> -->
+                          <input required class="form-control" type="text" id="taskdesc" name="taskdesc"><br><br>   
+
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button><br>
+                <a href="/task/list" class="btn btn-light ml-5">View all</a>
+
             </form>
             </div>
             
@@ -20,5 +29,4 @@
     </div>
 </div>
 
-
-<a href="/task/list" class="container">View all</a>
+<br>
