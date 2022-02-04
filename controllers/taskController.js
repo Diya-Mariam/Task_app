@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const task = mongoose.model('Task')
 
+const method = require('method-override')
 var router = express.Router();
 
 router.get('/', (req, res) => {
@@ -59,26 +60,26 @@ router.get('/delete/:id', (req, res) => {
 })
 
 
-router.get('/edit/:id', (req, res) => {
-    res.render('task/list')
-    
-})
+router.put('/edit/:id', (req, res) => {
 
-/*
-function updateTodo(req,res) {
+    console.log(req.params.id);
 
-    const todo = req.todo;
-    todo.task = req.body.task;
+    const tname = req.body.taskName
+    const tdesc = req.body.taskDesc
 
-    todo.task.save((err, docs)=> {
-        if(!err){
-            res.redirect('task/list')
+    task.findByIdAndUpdate(req.params.id, { taskName: tname, taskDesc: tdesc }, (err, doc) => {
+
+        if (!err) {
+
+            res.redirect('/task/list')
         }
-        else{
-            console.log('Error while saving: '+err);
+        else {
+            console.log('Roor in updating ' + err)
         }
     })
 
-}   */
+
+})
+
 
 module.exports = router;

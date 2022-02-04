@@ -1,58 +1,32 @@
-<div class="container">
-    <div class="row">
-    <div class="col-md-11 col-md-offset-11 col-centered">
-        <h2 class="text-primary mt-5 text-center mb-3">List page</h2>
-        <table class="table table-bordered">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Task Name</th>
-                    <th scope="col">Task Description</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each list}}
-                <tr>
-                    <th scope="row">{{this.list.id}}</th>
-                    <td>{{this.taskName}}</td>
-                    <td>{{this.taskDesc}}</td>
-                    <td>
-                        <a class="btn btn-success" href="/task/edit/{{this.id}}">Edit</a>
-                        <a class="btn btn-success" href="/task/delete/{{this._id}}"> Delete</a>
-                    </td>
-                </tr>
-                {{/each}}
-               
-            </tbody>
-        </table><br>
 
-        <a href="/task" type="submit" class="btn btn-primary"> Go Back</a>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-11 col-md-offset-7 col-centered">
+            <h2 class="text-primary mt-5 mb-4 text-center">{{viewTitle}}</h2>
+            <div class=" d-flex justify-content-center">
+                <form action="/task/list" autocomplete="off" method="PUT">
+                <div class="form-group">
+                    <label for="taskname">Task name:</label><br>
+                    <div class="input-group-lg">
+                        
+                        <input required type="text" class="form-control" id="taskname" name="taskname"><br>
+                    </div>
+                
+                    <label for="taskdesc">Task description:</label><br>
+                    <div class="input-group-lg">
+         <!--                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> -->
+                          <input required class="form-control" type="text" id="taskdesc" name="taskdesc"><br><br>   
+
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button><br>
+                <a href="/task/list" class="btn btn-light ml-5">View all</a>
+
+            </form>
+            </div>
+            
         </div>
-        
-        </div>
+    </div>
 </div>
 
-        <!--<table class="table">
-            <thead class="thead-light">
-                <tr>
-                    <th>Task Name</th>
-                    <th>Task Description</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each list}}
-                <tr>
-                    <td>{{this.taskName}}</td>
-                    <td>{{this.taskDesc}}</td>
-                    <td>
-                        <a href="#">Edit</a>
-                        <a href="/task/delete/{{this._id}}"> Delete</a>
-                    </td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>-->
-  
-
+<br>
