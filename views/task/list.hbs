@@ -5,7 +5,7 @@
         <table class="table table-bordered">
             <thead class="thead-light">
                 <tr>
-                    <th scope="col">#</th>
+                    
                     <th scope="col">Task Name</th>
                     <th scope="col">Task Description</th>
                     <th scope="col"></th>
@@ -14,11 +14,10 @@
             <tbody>
                 {{#each list}}
                 <tr>
-                    <th scope="row">{{this.list.id}}</th>
                     <td>{{this.taskName}}</td>
                     <td>{{this.taskDesc}}</td>
                     <td>
-                        <a class="btn btn-success" href="/task/edit/{{this._id}}">Edit</a>
+                        <a class="btn btn-success" onclick="taskcontroller">Edit</a>
                         <a class="btn btn-success" href="/task/delete/{{this._id}}"> Delete</a>
                     </td>
                 </tr>
